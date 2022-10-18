@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*z2i2mqv=+h7yfi%gc0f68h8j*(o^4c#(_9jq84$vsfr_*%h98
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'WebMundial.urls'
@@ -129,3 +130,13 @@ LOGIN_URL = '/DataMundial/login/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_TMP = os.path.join(BASE_DIR, 'static')
+
+os.makedirs(STATIC_TMP, exist_ok= True)
+os.makedirs(STATIC_ROOT, exist_ok= True)
+
+STATICFILES_DIRS= (
+    os.path.join(BASE_DIR, 'static'),
+)
