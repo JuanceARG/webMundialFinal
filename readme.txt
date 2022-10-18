@@ -8,8 +8,12 @@ Inicio, Registro, Concurso, Selecciones, Pronosticos
 
 Las opciones poseen la siguiente función:
 Inicio:          Redirige la página de Inicio
-Registro:        Envía a la página donde se puede hacer el registro de personas y consultar personas ya registradas.
-Concurso:        en construcción
+Grupos:          Visualiza la fase de grupos
+Concurso:        Permite elegir un ganador y agregar comentarios
 Selecciones:     muestra información de las selecciones participantes según datos en la base de datos.
-Pronosticos:     en construcción
+Pronosticos:     Muestra los pronosticos segun votacion
+Arma tu seleccion: En desarrollo, permitira elegir jugadores de cualquier seleccio y armar un equipo personalizado
+Acerca de los desarrolladores : Muestra info del team developer de la pagina.
+
+Se encuentra ademas en desarrollo para futuras actualizaciones un chatroom para usuarios de la pagina y una seccion simil foro donde se puedan subir comentarios de cada seleccion y debatir con otros usuarios.
 

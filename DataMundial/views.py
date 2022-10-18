@@ -31,26 +31,7 @@ def inicio(request):
 def inicio2(request):
     return render(request, 'inicio.html')
 
-########################## registro y busqueda ###############################
-def registros(request):
-    if request.method == "POST":
-        registro= Registro(nombre=request.POST['nombre'], apellido=request.POST['apellido'], email=request.POST['email'], edad=request.POST['edad'])
-        registro.save()
-        return render(request, "registros.html")   
-    return render(request, "registros.html")
 
-def buscar_registro(request):
-    if request.GET["email"]:
-        email = request.GET["email"]
-        registros = Registro.objects.filter(email__icontains = email) 
-        if registros:
-            return render(request, "registros.html", {"registros": registros})
-        else:
-            return HttpResponse("NO EXISTEN REGISTROS")
-    
-    else:
-        respuesta = "No enviaste datos"
-    return HttpResponse(respuesta)
 ##############################################################################
 @login_required
 def miSeleccion(request):
@@ -99,7 +80,7 @@ def pronostico(request):
     return render(request, 'pronostico.html', {'avatar': avatar})
 
 ###################Muestra la seleccion elegida en template selecciones###############
-@login_required
+
 def detalle_seleccion(request, seleccion_seleccion):
     verSeleccion = selecciones.objects.filter(seleccion = seleccion_seleccion)
     avatar = Avatar.objects.filter(user = request.user.id)
@@ -211,7 +192,7 @@ def AgregarAvatar(request):
             form = AvatarFormulario()
     return render (request, "AgregarAvatar.html", {'form': form})
 
-
+@login_required
 def blog_concurso(request):
     # usuario = Avatar.objects.all()
     # print(usuario)

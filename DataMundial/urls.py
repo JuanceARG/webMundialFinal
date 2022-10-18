@@ -16,7 +16,7 @@ urlpatterns = [
     path('DataMundial/', inicio),
     path('inicio/', inicio),
     path('inicio2/', inicio2),
-    path('registros/', registros),
+   
     path('selecciones/', ver_selecciones),
     path('grupos/', ver_grupos),
     path('login/', login_request),
@@ -29,7 +29,7 @@ urlpatterns = [
     path('perfil/changeAvatar', AgregarAvatar),
     path('pronostico/', pronostico),    
     path('seleccionElegida/<seleccion_seleccion>', detalle_seleccion),
-    path('buscar_registro/', buscar_registro),
+    
     re_path(r'concurso/', views.blog_concurso, name='form'),
     path('pronostico_blank/',views.pronostico_blank, name='pronostico_blank'),
     path('acercade/', acercade),
