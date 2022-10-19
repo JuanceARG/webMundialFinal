@@ -17,8 +17,7 @@ from django.contrib.auth import login, logout, authenticate, update_session_auth
 
 # Create your views here.
 
-def home(request):
-    return render(request, 'home.html')
+
 
 def inicio(request):
     avatar = Avatar.objects.filter(user = request.user.id)
